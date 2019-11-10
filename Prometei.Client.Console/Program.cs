@@ -27,7 +27,7 @@ namespace Prometei.Client.Console
 			foreach (var cource in myCourses)
 			{
 				var courceEvents = api.GetCoureEventsAsync(cource.EventsId).Result.ToList();
-				var activeCourceEvents = courceEvents.Where(x => x.TimeBegin < DateTime.Now && x.TimeEnd > DateTime.Now).ToList();
+				var activeCourceEvents = courceEvents.Where(x => x.TimeBegin < DateTime.Now && x.TimeEnd > DateTime.Now && x.Type != CourseEvent.Types.Lecture).ToList();
 				if (activeCourceEvents.Any())
 				{
 					activeCourses.Add(cource, activeCourceEvents);
