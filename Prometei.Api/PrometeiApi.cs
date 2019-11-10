@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 using System.Web;
 using Prometei.Api.Exceptions;
 using Prometei.Api.Models;
+using Fody;
 
 namespace Prometei.Api
 {
+	[ConfigureAwait(false)]
 	public class PrometeiApi
 	{
 		private HttpClient httpClient = new HttpClient(new HttpClientHandler() { MaxConnectionsPerServer = 30 });
