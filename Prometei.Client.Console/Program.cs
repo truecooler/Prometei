@@ -11,13 +11,13 @@ namespace Prometei.Client.Console
 	{
 		static void Main(string[] args)
 		{
-			if (args.Count() != 2)
-			{
-				System.Console.WriteLine($"usage: ./{Process.GetCurrentProcess().ProcessName} login password");
-				return;
-			}
+			System.Console.WriteLine("your login:");
+			string login = System.Console.ReadLine();
 
-			var api = new PrometeiApi(args[0], args[1]);
+			System.Console.WriteLine("your pass:");
+			string password = System.Console.ReadLine();
+
+			var api = new PrometeiApi(login, password);
 			api.EnsureCredentialsAreValidAsync().Wait();
 
 			var activeCourses = new Dictionary<Course, List<CourseEvent>>();

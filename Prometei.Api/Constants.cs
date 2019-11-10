@@ -21,7 +21,7 @@ namespace Prometei.Api
 			public static readonly Uri Uri = new Uri(PrometeiUri, "close/students/ktpEvents.asp");
 			public static class RequestParameters
 			{
-				public const string CourseId = "idKtp";
+				public const string CourseEventId = "idKtp";
 			}
 			public static class RegularExpressions
 			{

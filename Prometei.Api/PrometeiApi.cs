@@ -54,9 +54,9 @@ namespace Prometei.Api
 			return Course.ListFromHttpContent(response.Content);
 		}
 
-		public async Task<IEnumerable<CourseEvent>> GetCoureEventsAsync(Guid courseId)
+		public async Task<IEnumerable<CourseEvent>> GetCoureEventsAsync(Guid courseEventsId)
 		{
-			var args = new Dictionary<string, object>() { {Constants.CourseEventsPage.RequestParameters.CourseId, courseId } };
+			var args = new Dictionary<string, object>() { {Constants.CourseEventsPage.RequestParameters.CourseEventId, courseEventsId } };
 			var requestUri = BuildUriRequestString(Constants.CourseEventsPage.Uri, args);
 
 			HttpResponseMessage response = await httpClient.GetAsync(requestUri);
