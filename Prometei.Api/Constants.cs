@@ -25,7 +25,7 @@ namespace Prometei.Api
 			}
 			public static class RegularExpressions
 			{
-				public static readonly Regex EventsList = new Regex("<tr.*?><td>(.+?)</td><td>(.+?)</td><td>(.+?) - (.+?)</td><td>(.*?)&nbsp;</td><td>(.*?)</td><td>(.*?)</td></tr>");
+				public static readonly Regex EventsList = new Regex("<tr.*?><td>(.+?)</td><td>(.+?)</td><td>(.+?) - (.+?)</td><td>(.*?)&nbsp;</td><td>(.*?)</td><td.*?>(.*?)</td></tr>");
 			}
 		}
 		public static class DashboardPage
